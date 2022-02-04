@@ -48,6 +48,19 @@ Point FindMidPoint(Line l) {
     return mid;
 }
 
+Point FindLowestPoint(Line l) {
+    Point lowest;
+    if(l.end.y < l.start.y){
+      lowest.y = l.end.y;
+      lowest.x = l.end.x;
+    }
+    else{
+      lowest.y = l.start.y;
+      lowest.x = l.start.x;
+    }
+    return lowest;
+}
+
 int main() {
     Line a(Point(3,9), Point(12,22));
     cout << "Line a";
@@ -56,6 +69,10 @@ int main() {
     // This is new
     Point midPoint = FindMidPoint(a);
     PrintPoint(midPoint);
+    cout << endl;
+    Point Lowest = FindLowestPoint(a);
+    cout << "Line a's lowest point";
+    PrintPoint(Lowest);
     cout << endl;
     return 0;
 }
